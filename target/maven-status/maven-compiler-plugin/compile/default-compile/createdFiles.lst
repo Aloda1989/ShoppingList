@@ -1,0 +1,5 @@
+shoppingList\repository\ProductMemory.class
+shoppingList\Domain\Product.class
+shoppingList\service\ProductService.class
+shoppingList\service\validation\ProductValidationException.class
+shoppingList\service\ShoppingListApplication.class

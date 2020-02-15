@@ -1,7 +1,8 @@
-package service;
+package ShoppingList.service;
 
-import domain.Product;
-import repository.ProductInMemory;
+import ShoppingList.domain.Product;
+import ShoppingList.repository.ProductInMemory;
+import ShoppingList.service.validation.ProductValidationService;
 
 public class ProductService {
     private ProductInMemory pim = new ProductInMemory();

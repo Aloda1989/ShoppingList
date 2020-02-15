@@ -1,6 +1,6 @@
-package service.validation;
+package ShoppingList.service.validation;
 
-import domain.Product;
+import ShoppingList.domain.Product;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -23,8 +23,5 @@ public class ProductValidationService {
     }
 
     public void validate(Product product) {
-        validationRules.forEach(s -> {
-            s.validate(product);
-        });
     }
 }

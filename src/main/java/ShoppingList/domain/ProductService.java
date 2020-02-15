@@ -1,13 +1,15 @@
 package ShoppingList.domain;
 
+import ShoppingList.repository.ProductInMemory;
+
 import java.math.BigDecimal;
 import java.util.List;
 
 public class ProductService {
-    public Product pr;
+    private ProductInMemory pim;
 
-    public ProductService(Product product) {
-        this.pr = product;
+    public ProductService(ProductInMemory pim) {
+        this.pim = pim;
     }
 
     public Product createProduct(String name, BigDecimal priceValue, BigDecimal discountValue) {
@@ -15,36 +17,36 @@ public class ProductService {
         return newProduct;
     }
 
-    public void writeProduct(Product product) {
-        pr.insert(product);
+    public void writeProductInDataBase(Product product) {
+        pim.insert(product);
     }
 
     public void setProductDescription(Product product, String productDiscription) {
-        pr.setDescription(productDiscription);
+        product.setDescription(productDiscription);
     }
 
     public void setProductCategory(Product product, Category category) {
         product.setCategory(category);
     }
 
-    public Product getProduct(Long productID) {
-        return pr.get(productID);
+    public Product getProductFromDataBase(Long productID) {
+        return pim.get(productID);
     }
 
-    public Product getProduct(String productName) {
-        return pr.get(productName);
+    public Product getProductFromDataBase(String productName) {
+        return pim.get(productName);
     }
 
     public List<Product> getProductList(Category category) {
-        return pr.getProductList(category);
+        return pim.getProductList(category);
     }
 
     public Product getProductFromDataBase(Product product) {
-        return pr.get(product);
+        return pim.get(product);
     }
 
     public void deleteProductFromDataBase(Product product) {
-        pr.delete(product);
+        pim.delete(product);
     }
 
 }

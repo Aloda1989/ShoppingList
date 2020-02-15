@@ -1,4 +1,4 @@
-package ShoppingList.service.validation;
+package ShoppingList.validation;
 
 import java.math.BigDecimal;
 

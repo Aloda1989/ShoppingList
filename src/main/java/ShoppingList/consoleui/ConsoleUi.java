@@ -2,10 +2,11 @@ package ShoppingList.consoleui;
 
 import ShoppingList.domain.Category;
 import ShoppingList.domain.Product;
-import ShoppingList.service.ProductService;
-import ShoppingList.service.validation.DiscountValidation;
-import ShoppingList.service.validation.PriceValidation;
-import ShoppingList.service.validation.ProductValidationException;
+import ShoppingList.domain.ProductService;
+import ShoppingList.validation.DiscountValidation;
+import ShoppingList.validation.NameValidationRule;
+import ShoppingList.validation.PriceValidation;
+import ShoppingList.validation.ProductValidationException;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -39,7 +40,7 @@ public class ConsoleUi {
         BigDecimal discount = getProductDiscount();
 
         Product newProduct = productService.createProduct(name, priceBD, discount);
-        productService. (newProduct);
+        productService.writeProductInDataBase(newProduct);
 
         if (!(newProduct == Product.emptyProduct)) {
             setCategory(productService, newProduct);
@@ -94,7 +95,7 @@ public class ConsoleUi {
             try {
                 System.out.println("======   Please enter product name! Name cannot be less than 3 characters and more than 32! ");
                 name = ScannerInput.getKeyboardInputLine();
-                NameValidation.validate(name);
+                NameValidationRule.validate(name);
                 correctInput = true;
             } catch (ProductValidationException f) {
                 System.out.println(f.getMessage());
@@ -123,7 +124,7 @@ public class ConsoleUi {
         int userChose = ScannerInput.getUserNumberInput();
         if (userChose > 0) {
             Category category = getCategoryByMenu();
-            productService.setproductCategory(product, category);
+            productService.setProductCategory(product, category);
         }
 
     }
@@ -158,13 +159,13 @@ public class ConsoleUi {
         int userChose = ScannerInput.getUserNumberInput();
         if (userChose == 1) {
             System.out.println("enter product ID to search ");
-            Long iD = new Long(ScannerInput.getUserNumberInput());
+            Long iD = (long) ScannerInput.getUserNumberInput();
 
-            receivedProduct = productService.getProducrFromDataBase(iD);
+            receivedProduct = productService.getProductFromDataBase(iD);
         } else {
             System.out.println("enter product name to search ");
             String productName = ScannerInput.getKeyboardInputLine();
-            receivedProduct = productService.getProducrFromDataBase(productName);
+            receivedProduct = productService.getProductFromDataBase(productName);
         }
         return receivedProduct;
     }
@@ -184,7 +185,7 @@ public class ConsoleUi {
 
     private void getProductListByCategory() {
         Category category = getCategoryByMenu();
-        List<Product> productList = productService.getProducrListFromDataBaseByCategory(category);
+        List<Product> productList = productService.getProductList(category);
         System.out.println(productList.toString());
     }
 

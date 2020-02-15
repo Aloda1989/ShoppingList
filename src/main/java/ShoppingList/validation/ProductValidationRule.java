@@ -1,13 +1,13 @@
-package ShoppingList.service.validation;
+package ShoppingList.validation;
 
 import ShoppingList.domain.Product;
 import ShoppingList.repository.ProductInMemoryInterface;
 
 
-public interface ProductValidationRule {
+public class ProductValidationRule {
     private ProductInMemoryInterface pim;
 
-    public ProductAvailabilityInDatabaseValidation(ProductInMemoryInterface pim) {
+    public ProductValidationRule(ProductInMemoryInterface pim) {
         this.pim = pim;
     }
 

@@ -8,7 +8,7 @@ public class ShoppingList {
 
         TextMessage.userWelcome();
         ConsoleUi consoleUi = DIHelper.createApplication();
-        ConsoleUi.mainUserMenu();
+        consoleUi.mainUserMenu();
         TextMessage.goodbyeToTheUser();
 
     }

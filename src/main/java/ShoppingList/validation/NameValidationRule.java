@@ -1,6 +1,12 @@
-package ShoppingList.service.validation;
+package ShoppingList.validation;
 
-public class NameValidationRule implements ProductValidationRule {
+import ShoppingList.repository.ProductInMemoryInterface;
+
+public class NameValidationRule extends ProductValidationRule {
+
+    public NameValidationRule(ProductInMemoryInterface pim) {
+        super(pim);
+    }
 
     public static void validate(String productName) throws ProductValidationException {
 

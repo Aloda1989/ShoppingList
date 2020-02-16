@@ -17,7 +17,7 @@ public class ConsoleUi {
 
     public ConsoleUi(ProductService productService, ScannerInput keyboardInput) {
         this.productService = productService;
-        this.ScannerInput = keyboardInput;
+        ScannerInput = keyboardInput;
 
     }
 
@@ -45,7 +45,7 @@ public class ConsoleUi {
         if (!(newProduct == Product.emptyProduct)) {
             setCategory(productService, newProduct);
             setDescription(newProduct);
-            System.out.println("======   You created product : ");
+            System.out.println("Product have been created: ");
             System.out.println(newProduct.toString());
         }
     }
@@ -56,7 +56,7 @@ public class ConsoleUi {
         boolean correctInput = false;
         while (!correctInput) {
             try {
-                System.out.println("======   Please enter product discount  in format like 0.00. Discount cannot be more than 100 percent!");
+                System.out.println("Enter discount for product in 0.00 format!");
                 discount = ScannerInput.getKeyboardInputBigDecimal();
 
                 DiscountValidation.validate(discount);
@@ -75,7 +75,7 @@ public class ConsoleUi {
         boolean correctInput = false;
         while (!correctInput) {
             try {
-                System.out.println("======   Please enter product pice in format like 0.00 ! Product price must be greater than 0! ");
+                System.out.println("Enter product price in 0.00 format!");
                 priceBD = ScannerInput.getKeyboardInputBigDecimal();
                 PriceValidation.validate(priceBD);
                 correctInput = true;
@@ -93,7 +93,7 @@ public class ConsoleUi {
         boolean correctInput = false;
         while (!correctInput) {
             try {
-                System.out.println("======   Please enter product name! Name cannot be less than 3 characters and more than 32! ");
+                System.out.println("Enter product name!");
                 name = ScannerInput.getKeyboardInputLine();
                 NameValidationRule.validate(name);
                 correctInput = true;
@@ -140,30 +140,30 @@ public class ConsoleUi {
 
     private void getProductInformation() {
 
-        Product receivedProduct = getProductAcrossMenue();
+        Product receivedProduct = getProductAcrossMenu();
 
         if (!(receivedProduct == Product.emptyProduct)) {
             System.out.println(receivedProduct.toString());
         } else {
-            System.out.println("Product dont search!");
+            System.out.println("Empty Product, please input different number!");
         }
 
     }
 
-    private Product getProductAcrossMenue() {
+    private Product getProductAcrossMenu() {
 
-        Product receivedProduct = Product.emptyProduct;
+        Product receivedProduct;
         TextMessage.gettingProductTextQuestion();
 
 
         int userChose = ScannerInput.getUserNumberInput();
         if (userChose == 1) {
-            System.out.println("enter product ID to search ");
+            System.out.println("Enter product ID to search");
             Long iD = (long) ScannerInput.getUserNumberInput();
 
             receivedProduct = productService.getProductFromDataBase(iD);
         } else {
-            System.out.println("enter product name to search ");
+            System.out.println("Enter product name to search");
             String productName = ScannerInput.getKeyboardInputLine();
             receivedProduct = productService.getProductFromDataBase(productName);
         }
@@ -172,13 +172,13 @@ public class ConsoleUi {
 
     private void deleteSelectedProduct() {
         TextMessage.productSelectingToDeleteText();
-        Product productToDelete = getProductAcrossMenue();
+        Product productToDelete = getProductAcrossMenu();
 
         if (!(productToDelete == Product.emptyProduct)) {
             productService.deleteProductFromDataBase(productToDelete);
-            System.out.println("Product " + productToDelete.toString() + "deleted");
+            System.out.println("Product " + productToDelete.toString() + " was deleted");
         } else {
-            System.out.println("Dont searched product");
+            System.out.println("Empty Product, please input different number!");
         }
 
     }

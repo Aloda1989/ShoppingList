@@ -18,18 +18,14 @@ public class Product {
         this.name = name;
         price = priceValue;
         discount = discountValue;
-        id = counter.longValue();
+        id = counter;
         counter++;
         category = Category.Laptops;
 
     }
 
-    public BigDecimal getPrice() {
-        return price;
-    }
+    public Product() {
 
-    public BigDecimal getDiscount() {
-        return discount;
     }
 
     public Long getId() {
@@ -38,6 +34,22 @@ public class Product {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public void setDiscount(BigDecimal discount) {
+        this.discount = discount;
     }
 
     public Category getCategory() {
@@ -70,12 +82,12 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", category=" + category +
-                ", discount=" + discount +
-                ", description='" + description + '\'' +
+                "Id=" + id +
+                ", Name='" + name + '\'' +
+                ", Price=" + price +
+                ", Category=" + category +
+                ", Discount=" + discount +
+                ", Description='" + description + '\'' +
                 '}';
     }
 }

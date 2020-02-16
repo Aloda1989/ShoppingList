@@ -13,8 +13,7 @@ public class ProductService {
     }
 
     public Product createProduct(String name, BigDecimal priceValue, BigDecimal discountValue) {
-        Product newProduct = new Product(name, priceValue, discountValue);
-        return newProduct;
+        return new Product(name, priceValue, discountValue);
     }
 
     public void writeProductInDataBase(Product product) {
@@ -39,10 +38,6 @@ public class ProductService {
 
     public List<Product> getProductList(Category category) {
         return pim.getProductList(category);
-    }
-
-    public Product getProductFromDataBase(Product product) {
-        return pim.get(product);
     }
 
     public void deleteProductFromDataBase(Product product) {

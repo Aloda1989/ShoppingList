@@ -75,7 +75,6 @@ public class ProductInMemory implements ProductInMemoryInterface {
         pim.remove(product);
     }
 
-
     @Override
     public String toString() {
         return "Product {" +

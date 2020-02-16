@@ -24,9 +24,8 @@ public class ScannerInput {
     public String getKeyboardInputLine() {
 
         Scanner keyReader = new Scanner(System.in);
-        String string = keyReader.nextLine();
 
-        return string;
+        return keyReader.nextLine();
     }
 
     public BigDecimal getKeyboardInputBigDecimal() {

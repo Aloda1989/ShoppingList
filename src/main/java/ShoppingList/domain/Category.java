@@ -15,7 +15,7 @@ public enum Category {
 
     public static List getCategoryList() {
 
-        List<Category> categories = new ArrayList<Category>();
+        List<Category> categories = new ArrayList<>();
         categories.add(Laptops);
         categories.add(PC);
         categories.add(Accessories);

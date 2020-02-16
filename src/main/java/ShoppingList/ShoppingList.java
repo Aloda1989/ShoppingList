@@ -6,10 +6,10 @@ import ShoppingList.consoleui.TextMessage;
 public class ShoppingList {
     public static void main(String[] args) {
 
-        TextMessage.userWelcome();
+        TextMessage.startOfProgram();
         ConsoleUi consoleUi = DIHelper.createApplication();
         consoleUi.mainUserMenu();
-        TextMessage.goodbyeToTheUser();
+        TextMessage.endOfProgram();
 
     }
 }

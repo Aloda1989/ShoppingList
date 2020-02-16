@@ -1,62 +1,55 @@
 package ShoppingList.consoleui;
 
 public class TextMessage {
-    public static void goodbyeToTheUser() {
-
-        System.out.println("======================================================================================================");
-        System.out.println("=============================== GOODBYE ITS WAS GOOD WORK  ============================================");
-        System.out.println("======================================================================================================");
-
+    public static void endOfProgram() {
+        System.out.println("Thank you for your cooperation");
     }
 
-
-    public static void userWelcome() {
-
-        System.out.println("======================================================================================================");
-        System.out.println("=============================== WELCOME IN SUPER PRODUCT DATA BASE  ==================================");
-        System.out.println("===================================== PLEASE CHECK YOR CHOSE  ========================================");
-
+    public static void startOfProgram() {
+        System.out.println("Welcome to Shopping App.");
     }
-
 
     public static void userMenu() {
 
-        System.out.println("============================================ MAIN MENU ================================================");
-        System.out.println("Please enter 1 to create product");
-        System.out.println("Please enter 2 to get product");
-        System.out.println("Please enter 3 to get product list");
-        System.out.println("Please enter 4 to delete product");
-        System.out.println("Please enter 5  or some other to exit programs");
+        System.out.println("Select one of the option bellow to start!");
+        System.out.println("Enter 1 to create a Product");
+        System.out.println("Enter 2 to get Product by ID or Name");
+        System.out.println("Enter 3 to retrieve Product List");
+        System.out.println("Enter 4 to delete Product by ID or Name ");
+        System.out.println("Enter 5 to end using Application");
 
 
     }
 
     public static void descriptionTextQuestion() {
-        System.out.println("======================================== DESCRIPTION ================================================");
-        System.out.println("if you want set product description please enter 1 or more / for decline setting description please 0");
+        System.out.println("Description of Product!");
+        System.out.println("Enter 1 to create description for Product");
+        System.out.println("Enter 0 for creating without description");
     }
 
     public static void descriptionTextSetting() {
-        System.out.println("===================================== PLEASE ENTER PRODUCT DESCRIPTON  ========================================");
+        System.out.println("Enter Description Below!");
     }
 
 
     public static void gettingProductTextQuestion() {
-        System.out.println("=========================================== GETTING PRODUCT ================================================");
-        System.out.println("if you want get product get by ID please enter 1  / get by name enter 2 or more ");
+        System.out.println("Product search!");
+        System.out.println("Enter 1 to search Product by ID");
+        System.out.println("Enter 2 to search Product by Name");
 
     }
 
     public static void settingCategoryTextQuestion() {
-        System.out.println("=========================================== SETTING CATEGORY ================================================");
-        System.out.println("if you want set product category please enter 1 or more / for decline setting category please 0");
+        System.out.println("Set category for Product");
+        System.out.println("Enter 1 if you want to set Product category");
+        System.out.println("Enter 0 for decline setting category");
     }
 
     public static void checkingCategoryText() {
-        System.out.println("===================================== PLEASE CHECK YOR CATEGORY  ========================================");
+        System.out.println("Check Category!");
     }
 
     public static void productSelectingToDeleteText() {
-        System.out.println("===================================== PLEASE SELECTING PRODUCT TO DELETE  ========================================");
+        System.out.println("Select Product for deleting!");
     }
 }

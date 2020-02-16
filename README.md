@@ -1,11 +1,23 @@
 # ShoppingList
 
-Java 2 main project
+App can:
+Create, delete, show category.
 
-*Italic*
+Shopping list patch notes:
 
-- test
+Added: 
+*Category, Discount, Description functions*
 
-* test2
+- price of product can be more than 0.
+- discount can be more than 100 % and less than 0.
+- name must be form 3 to 32 symbols.
+- #####Refactored with Single Responsibility Principle
 
-##Bold
+Tests were done on:
+
+- ProductService
+- Product
+- NameValidationRule
+- ProductValidationRule
+
+v 1.0.0

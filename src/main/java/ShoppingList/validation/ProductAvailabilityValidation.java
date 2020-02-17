@@ -4,6 +4,8 @@ import ShoppingList.domain.Product;
 
 public class ProductAvailabilityValidation {
 
+    // TODO: do not store product there!
+    // Use a product received as a parameter for validate method!
     private Product pim;
 
     public ProductAvailabilityValidation(Product pim) {

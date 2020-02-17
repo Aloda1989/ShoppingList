@@ -1,4 +1,4 @@
-package ShoppingList;
+package ShoppingList;  // TODO: for package names use lower case letters
 
 import ShoppingList.consoleui.ConsoleUi;
 import ShoppingList.consoleui.ScannerInput;

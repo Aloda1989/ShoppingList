@@ -5,6 +5,8 @@ import ShoppingList.repository.ProductInMemory;
 import java.math.BigDecimal;
 import java.util.List;
 
+// TODO: move this service to business logic package
+// This class no a domain object!
 public class ProductService {
     private ProductInMemory pim;
 

@@ -1,7 +1,9 @@
 package ShoppingList.validation;
 
 import ShoppingList.domain.Product;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ProductAvailabilityValidation {
 
     private Product pim;

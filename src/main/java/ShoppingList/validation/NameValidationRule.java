@@ -1,7 +1,9 @@
 package ShoppingList.validation;
 
 import ShoppingList.repository.ProductInMemoryInterface;
+import org.springframework.stereotype.Service;
 
+@Service
 public class NameValidationRule extends ProductValidationRule {
 
     public NameValidationRule(ProductInMemoryInterface pim) {

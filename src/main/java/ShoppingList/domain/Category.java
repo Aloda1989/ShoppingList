@@ -1,8 +1,6 @@
 package ShoppingList.domain;
-
 import java.util.ArrayList;
 import java.util.List;
-
 public enum Category {
     Laptops,
     PC,
@@ -13,7 +11,7 @@ public enum Category {
     Phones,
     Video;
 
-    public static List getCategoryList() {
+    public static List<Category> getCategoryList() {
 
         List<Category> categories = new ArrayList<>();
         categories.add(Laptops);
@@ -30,7 +28,7 @@ public enum Category {
 
     public static void printCategoryList() {
 
-        List categories = getCategoryList();
+        List<Category> categories = getCategoryList();
 
         System.out.println("" + categories.indexOf(Laptops) + " = " + Laptops);
         System.out.println("" + categories.indexOf(PC) + " = " + PC);

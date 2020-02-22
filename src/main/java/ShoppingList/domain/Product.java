@@ -1,8 +1,11 @@
 package ShoppingList.domain;
 
+import org.springframework.stereotype.Repository;
+
 import java.math.BigDecimal;
 import java.util.Objects;
 
+@Repository
 public class Product {
     public static Long counter = 0L;
     public static final Product emptyProduct = new Product("", new BigDecimal(0), new BigDecimal(0));

@@ -7,17 +7,21 @@ import ShoppingList.validation.DiscountValidation;
 import ShoppingList.validation.NameValidationRule;
 import ShoppingList.validation.PriceValidation;
 import ShoppingList.validation.ProductValidationException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import java.math.BigDecimal;
 import java.util.List;
 
+@Controller
 public class ConsoleUi {
     private ProductService productService;
     private static ScannerInput ScannerInput;
 
-    public ConsoleUi(ProductService productService, ScannerInput keyboardInput) {
+    @Autowired
+    public ConsoleUi(ProductService productService, ScannerInput scannerInput) {
         this.productService = productService;
-        ScannerInput = keyboardInput;
+        ScannerInput = scannerInput;
 
     }
 

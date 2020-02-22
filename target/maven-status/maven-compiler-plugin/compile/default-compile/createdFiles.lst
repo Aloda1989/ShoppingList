@@ -1,10 +1,4 @@
 ShoppingList\ShoppingList.class
 ShoppingList\consoleui\ConsoleUi.class
-ShoppingList\service\validation\ProductValidationService$1.class
-ShoppingList\service\validation\ProductValidationException.class
-ShoppingList\service\validation\ProductValidationService.class
-ShoppingList\service\validation\NameValidationRule.class
-ShoppingList\service\validation\ProductValidationRule.class
 ShoppingList\repository\ProductInMemory.class
-ShoppingList\service\ProductService.class
 ShoppingList\domain\Product.class

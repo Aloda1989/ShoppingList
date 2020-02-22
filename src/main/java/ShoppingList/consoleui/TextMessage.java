@@ -1,5 +1,8 @@
 package ShoppingList.consoleui;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class TextMessage {
     public static void endOfProgram() {
         System.out.println("Thank you for your cooperation");

@@ -2,12 +2,14 @@ package ShoppingList.repository;
 
 import ShoppingList.domain.Category;
 import ShoppingList.domain.Product;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+@Repository
 public class ProductInMemory implements ProductInMemoryInterface {
     private List<Product> pim = new ArrayList<>();
 

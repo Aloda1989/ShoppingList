@@ -1,5 +1,10 @@
 # ShoppingList
 
+Patch Notes:
+Partly moved on spring
+
+v.1.0.1
+
 App can:
 Create, delete, show category.
 

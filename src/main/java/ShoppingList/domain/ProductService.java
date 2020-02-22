@@ -1,13 +1,17 @@
 package ShoppingList.domain;
 
 import ShoppingList.repository.ProductInMemory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.List;
 
+@Component
 public class ProductService {
     private ProductInMemory pim;
 
+    @Autowired
     public ProductService(ProductInMemory pim) {
         this.pim = pim;
     }

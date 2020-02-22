@@ -2,7 +2,6 @@ package ShoppingList.repository;
 
 import ShoppingList.domain.Product;
 
-
 public interface ProductInMemoryInterface {
     void insert(Product product);
 

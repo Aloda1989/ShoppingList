@@ -1,7 +1,9 @@
 package ShoppingList.validation;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
+@Service
 public class DiscountValidation {
     public static void validate(BigDecimal productDiscount) throws ProductValidationException {
 

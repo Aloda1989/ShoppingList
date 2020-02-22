@@ -4,7 +4,9 @@ import ShoppingList.consoleui.ConsoleUi;
 import ShoppingList.consoleui.ScannerInput;
 import ShoppingList.domain.ProductService;
 import ShoppingList.repository.ProductInMemory;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DIHelper {
     public static ConsoleUi createApplication() {
 

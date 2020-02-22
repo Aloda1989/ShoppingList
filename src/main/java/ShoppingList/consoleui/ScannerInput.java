@@ -1,8 +1,11 @@
 package ShoppingList.consoleui;
 
+import org.springframework.stereotype.Controller;
+
 import java.math.BigDecimal;
 import java.util.Scanner;
 
+@Controller
 public class ScannerInput {
     private static String deleteLettersAndSymbols(String userChoose) {
 

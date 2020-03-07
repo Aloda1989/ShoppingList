@@ -6,15 +6,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductAvailabilityValidation {
 
-    private Product pim;
+    private Product product;
 
     public ProductAvailabilityValidation(Product pim) {
-        this.pim = pim;
+        this.product = pim;
     }
 
     public boolean validate(Product product) throws ProductValidationException {
 
-        String foundProduct = pim.getName();
+        String foundProduct = product.getName();
         if (foundProduct != null) {
             throw new ProductValidationException("No Product with such name found!");
 

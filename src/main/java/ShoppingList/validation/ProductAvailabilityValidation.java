@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 public class ProductAvailabilityValidation {
 
     private Product product;
-
     public ProductAvailabilityValidation(Product pim) {
         this.product = pim;
     }

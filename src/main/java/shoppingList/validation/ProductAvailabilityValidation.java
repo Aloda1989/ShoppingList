@@ -7,7 +7,6 @@ import shoppingList.domain.Product;
 public class ProductAvailabilityValidation {
 
     private Product product;
-
     public ProductAvailabilityValidation(Product pim) {
         this.product = pim;
     }

@@ -9,6 +9,7 @@ import shoppingList.repository.ProductInMemory;
 import java.math.BigDecimal;
 import java.util.List;
 
+
 @Component
 public class ProductService {
     private ProductInMemory pim;

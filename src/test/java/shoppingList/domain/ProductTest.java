@@ -1,6 +1,5 @@
 package shoppingList.domain;
 
-import ShoppingList.domain.Product;
 import org.junit.Test;
 
 import java.math.BigDecimal;

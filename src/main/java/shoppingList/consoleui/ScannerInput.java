@@ -1,4 +1,4 @@
-package ShoppingList.consoleui;
+package shoppingList.consoleui;
 
 import org.springframework.stereotype.Controller;
 

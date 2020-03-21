@@ -1,4 +1,4 @@
-package ShoppingList.validation;
+package shoppingList.validation;
 
 public class ProductValidationException extends Throwable {
     ProductValidationException(String message) {

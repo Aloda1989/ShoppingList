@@ -1,8 +1,10 @@
-package ShoppingList.domain;
+package shoppingList.consoleui;
 
-import ShoppingList.repository.ProductInMemory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import shoppingList.domain.Category;
+import shoppingList.domain.Product;
+import shoppingList.repository.ProductInMemory;
 
 import java.math.BigDecimal;
 import java.util.List;

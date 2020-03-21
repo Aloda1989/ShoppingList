@@ -1,10 +1,10 @@
-package ShoppingList;
+package shoppingList;
 
-import ShoppingList.consoleui.ConsoleUi;
-import ShoppingList.consoleui.TextMessage;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
+import shoppingList.consoleui.ConsoleUi;
+import shoppingList.consoleui.TextMessage;
 
 @Component
 public class ShoppingList {

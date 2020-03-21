@@ -1,4 +1,4 @@
-package ShoppingList.validation;
+package shoppingList.validation;
 
 
 import org.springframework.stereotype.Service;

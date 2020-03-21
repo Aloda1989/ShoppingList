@@ -1,4 +1,4 @@
-package ShoppingList.domain;
+package shoppingList.domain;
 
 import org.springframework.stereotype.Repository;
 

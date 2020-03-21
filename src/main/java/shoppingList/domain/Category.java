@@ -1,6 +1,7 @@
-package ShoppingList.domain;
+package shoppingList.domain;
 import java.util.ArrayList;
 import java.util.List;
+
 public enum Category {
     Laptops,
     PC,

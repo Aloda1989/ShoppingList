@@ -1,14 +1,13 @@
-package ShoppingList.consoleui;
+package shoppingList.consoleui;
 
-import ShoppingList.domain.Category;
-import ShoppingList.domain.Product;
-import ShoppingList.domain.ProductService;
-import ShoppingList.validation.DiscountValidation;
-import ShoppingList.validation.NameValidationRule;
-import ShoppingList.validation.PriceValidation;
-import ShoppingList.validation.ProductValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import shoppingList.domain.Category;
+import shoppingList.domain.Product;
+import shoppingList.validation.DiscountValidation;
+import shoppingList.validation.NameValidationRule;
+import shoppingList.validation.PriceValidation;
+import shoppingList.validation.ProductValidationException;
 
 import java.math.BigDecimal;
 import java.util.List;

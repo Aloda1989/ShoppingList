@@ -1,10 +1,10 @@
-package ShoppingList;
+package shoppingList;
 
-import ShoppingList.consoleui.ConsoleUi;
-import ShoppingList.consoleui.ScannerInput;
-import ShoppingList.domain.ProductService;
-import ShoppingList.repository.ProductInMemory;
 import org.springframework.stereotype.Component;
+import shoppingList.consoleui.ConsoleUi;
+import shoppingList.consoleui.ProductService;
+import shoppingList.consoleui.ScannerInput;
+import shoppingList.repository.ProductInMemory;
 
 @Component
 public class DIHelper {

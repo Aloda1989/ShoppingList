@@ -1,7 +1,7 @@
-package ShoppingList.validation;
+package shoppingList.validation;
 
-import ShoppingList.domain.Product;
 import org.springframework.stereotype.Service;
+import shoppingList.domain.Product;
 
 @Service
 public class ProductAvailabilityValidation {

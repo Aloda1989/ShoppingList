@@ -1,4 +1,4 @@
-# ShoppingList
+# shoppingList
 
 Patch Notes:
 Partly moved on spring

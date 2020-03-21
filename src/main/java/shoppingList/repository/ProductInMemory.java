@@ -1,8 +1,8 @@
-package ShoppingList.repository;
+package shoppingList.repository;
 
-import ShoppingList.domain.Category;
-import ShoppingList.domain.Product;
 import org.springframework.stereotype.Repository;
+import shoppingList.domain.Category;
+import shoppingList.domain.Product;
 
 import java.util.ArrayList;
 import java.util.List;

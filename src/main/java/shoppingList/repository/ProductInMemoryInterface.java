@@ -1,6 +1,6 @@
-package ShoppingList.repository;
+package shoppingList.repository;
 
-import ShoppingList.domain.Product;
+import shoppingList.domain.Product;
 
 public interface ProductInMemoryInterface {
     void insert(Product product);

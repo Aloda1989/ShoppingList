@@ -1,13 +1,12 @@
 package shoppingList.domain;
 
-import ShoppingList.domain.Product;
-import ShoppingList.domain.ProductService;
-import ShoppingList.repository.ProductInMemory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+import shoppingList.consoleui.ProductService;
+import shoppingList.repository.ProductInMemory;
 
 import java.math.BigDecimal;
 

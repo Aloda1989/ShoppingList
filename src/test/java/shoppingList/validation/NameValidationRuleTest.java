@@ -1,10 +1,9 @@
 package shoppingList.validation;
 
-import ShoppingList.domain.Product;
-import ShoppingList.validation.ProductValidationException;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import shoppingList.domain.Product;
 
 public class NameValidationRuleTest {
     @Rule

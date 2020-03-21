@@ -1,12 +1,10 @@
 package shoppingList.validation;
 
-import ShoppingList.domain.Product;
-import ShoppingList.repository.ProductInMemoryInterface;
-import ShoppingList.validation.ProductAvailabilityValidation;
-import ShoppingList.validation.ProductValidationException;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
+import shoppingList.domain.Product;
+import shoppingList.repository.ProductInMemoryInterface;
 
 import java.math.BigDecimal;
 

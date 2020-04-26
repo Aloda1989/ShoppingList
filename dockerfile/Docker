@@ -1,0 +1,9 @@
+
+FROM mysql:latest
+
+ENV MYSQL_ROOT_PASSWORD=Allodasan1989
+ENV MYSQL_DATABASE=localhost
+ENV MYSQL_USER=Andrew
+ENV MYSQL_PASSWORD=Allodasan1989
+
+COPY initial-script.sql /docker-entrypoint-initdb.d/

@@ -1,34 +1,47 @@
 package shoppingList.domain;
-
-import org.springframework.stereotype.Repository;
-
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-@Repository
+@Entity
+@Table(name = "product")
 public class Product {
-    public static Long counter = 0L;
-    public static final Product emptyProduct = new Product("", new BigDecimal(0), new BigDecimal(0));
+    public Product() {
+    }
 
+    // public static Long counter = 0L;
+    // public static final Product emptyProduct = new Product("", new BigDecimal(0), new BigDecimal(0));
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "price")
     private BigDecimal price;
+    @Column(name = "category")
     private Category category;
+    @Column(name = "discount")
     private BigDecimal discount;
+    @Column(name = "description")
     private String description;
 
     public Product(String name, BigDecimal priceValue, BigDecimal discountValue) {
         this.name = name;
         price = priceValue;
         discount = discountValue;
-        id = counter;
-        counter++;
+//         id = counter.longValue();
+//          counter++;
         category = Category.Laptops;
 
     }
 
-    public Product() {
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public String getDescription() {
+        return description;
     }
 
     public Long getId() {
@@ -37,22 +50,6 @@ public class Product {
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public void setDiscount(BigDecimal discount) {
-        this.discount = discount;
     }
 
     public Category getCategory() {
@@ -85,12 +82,12 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "Id=" + id +
-                ", Name='" + name + '\'' +
-                ", Price=" + price +
-                ", Category=" + category +
-                ", Discount=" + discount +
-                ", Description='" + description + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", category=" + category +
+                ", discount=" + discount +
+                ", description='" + description + '\'' +
                 '}';
     }
 }

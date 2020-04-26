@@ -1,75 +1,78 @@
 package shoppingList.repository;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 import shoppingList.domain.Category;
 import shoppingList.domain.Product;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 @Repository
+@Profile("inmemory")
 public class ProductInMemory implements ProductInMemoryInterface {
     private List<Product> pim = new ArrayList<>();
+    private Long taskIdSequence = 0L;
+
 
     @Override
-    public Product get(Product insideProduct) {
+    public Optional<Product> get(Product insideProduct) {
 
         if (pim.contains(insideProduct)) {
-            return pim.get(pim.indexOf(insideProduct));
+            return Optional.ofNullable(pim.get(pim.indexOf(insideProduct)));
         } else {
-            return Product.emptyProduct;
+            return null;
         }
 
     }
 
     @Override
-    public Product get(String productName) {
+    public Optional<Product> get(String productName) {
 
         Predicate<Product> byName = product -> product.getName().equals(productName);
-        var result = pim.stream().filter(byName).collect(Collectors.toList());
+        List<Product> result = pim.stream().filter(byName).collect(Collectors.toList());
         if (!(result.size() == 0)) {
-            return result.get(0);
+            return Optional.ofNullable(result.get(0));
         } else {
-            return Product.emptyProduct;
+            return Optional.empty();
         }
 
     }
 
-    public List<Product> getProductList(Category category) {
-
-        return pim.stream()
+    public Optional<Product> getProductList(Category category) {
+        List<Product> products = pim.stream()
                 .filter(product -> product.getCategory().equals(category))
                 .collect(Collectors.toList());
+        return Optional.ofNullable(products.get(0));
 
     }
 
 
     @Override
-    public Product get(Long productID) {
+    public Optional<Product> get(Long productID) {
 
         Predicate<Product> byId = product -> product.getId().equals(productID);
         var result = pim.stream().filter(byId).collect(Collectors.toList());
         if (!(result.size() == 0)) {
-            return result.get(0);
+            return Optional.ofNullable(result.get(0));
         } else {
-            return Product.emptyProduct;
+            return Optional.empty();
         }
 
     }
 
-
     @Override
     public void insert(Product product) {
+        product.setId(taskIdSequence++);
         pim.add(product);
     }
 
     @Override
-    public void update(Product product) {
-
-        pim.set(pim.indexOf(product), product);
-
+    public void delete(Optional<Product> product) {
+        pim.remove(product);
     }
 
     @Override
@@ -77,10 +80,11 @@ public class ProductInMemory implements ProductInMemoryInterface {
         pim.remove(product);
     }
 
+
     @Override
     public String toString() {
         return "Product {" +
-                "dB=" + pim.toString() +
+                "Product=" + pim.toString() +
                 '}';
     }
 }

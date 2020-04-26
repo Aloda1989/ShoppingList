@@ -1,18 +1,20 @@
 package shoppingList.consoleui;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 import shoppingList.domain.Category;
 import shoppingList.domain.Product;
+import shoppingList.domain.ProductService;
 import shoppingList.validation.DiscountValidation;
 import shoppingList.validation.NameValidationRule;
 import shoppingList.validation.PriceValidation;
 import shoppingList.validation.ProductValidationException;
 
 import java.math.BigDecimal;
-import java.util.List;
+import java.util.Optional;
 
-@Controller
+
+@Component
 public class ConsoleUi {
     private ProductService productService;
     private static ScannerInput ScannerInput;
@@ -45,7 +47,7 @@ public class ConsoleUi {
         Product newProduct = productService.createProduct(name, priceBD, discount);
         productService.writeProductInDataBase(newProduct);
 
-        if (!(newProduct == Product.emptyProduct)) {
+        if (!(newProduct == null)) {
             setCategory(productService, newProduct);
             setDescription(newProduct);
             System.out.println("Product have been created: ");
@@ -143,9 +145,9 @@ public class ConsoleUi {
 
     private void getProductInformation() {
 
-        Product receivedProduct = getProductAcrossMenu();
+        Optional<Product> receivedProduct = getProductAcrossMenu();
 
-        if (!(receivedProduct == Product.emptyProduct)) {
+        if (!(receivedProduct == null)) {
             System.out.println(receivedProduct.toString());
         } else {
             System.out.println("Empty Product, please input different number!");
@@ -153,9 +155,9 @@ public class ConsoleUi {
 
     }
 
-    private Product getProductAcrossMenu() {
+    private Optional<Product> getProductAcrossMenu() {
 
-        Product receivedProduct;
+        Optional<Product> receivedProduct;
         TextMessage.gettingProductTextQuestion();
 
 
@@ -175,9 +177,9 @@ public class ConsoleUi {
 
     private void deleteSelectedProduct() {
         TextMessage.productSelectingToDeleteText();
-        Product productToDelete = getProductAcrossMenu();
+        Optional<Product> productToDelete = getProductAcrossMenu();
 
-        if (!(productToDelete == Product.emptyProduct)) {
+        if (!(productToDelete == null)) {
             productService.deleteProductFromDataBase(productToDelete);
             System.out.println("Product " + productToDelete.toString() + " was deleted");
         } else {
@@ -188,7 +190,7 @@ public class ConsoleUi {
 
     private void getProductListByCategory() {
         Category category = getCategoryByMenu();
-        List<Product> productList = productService.getProductList(category);
+        Optional<Product> productList = productService.getProductList(category);
         System.out.println(productList.toString());
     }
 

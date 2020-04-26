@@ -1,12 +1,12 @@
 package shoppingList.validation;
 
-import org.springframework.stereotype.Service;
-import shoppingList.repository.ProductInMemoryInterface;
+import org.springframework.stereotype.Component;
+import shoppingList.repository.ProductInHibernate;
 
-@Service
+@Component
 public class NameValidationRule extends ProductValidationRule {
 
-    public NameValidationRule(ProductInMemoryInterface pim) {
+    public NameValidationRule(ProductInHibernate pim) {
         super(pim);
     }
 

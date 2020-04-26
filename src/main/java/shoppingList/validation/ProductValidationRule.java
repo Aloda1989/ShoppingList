@@ -1,9 +1,9 @@
 package shoppingList.validation;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import shoppingList.repository.ProductInMemoryInterface;
 
-@Service
+@Component
 
 public class ProductValidationRule {
     private ProductInMemoryInterface pim;

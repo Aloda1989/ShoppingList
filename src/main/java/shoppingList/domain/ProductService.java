@@ -3,7 +3,6 @@ package shoppingList.domain;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import shoppingList.repository.ProductInHibernate;
 import shoppingList.repository.ProductInMemoryInterface;
 
 import java.math.BigDecimal;
@@ -11,10 +10,10 @@ import java.util.Optional;
 
 @Component
 public class ProductService {
-    private ProductInMemoryInterface productInMemoryInterface;
+    private final ProductInMemoryInterface productInMemoryInterface;
 
     @Autowired
-    public ProductService(ProductInHibernate productInMemoryInterface) {
+    public ProductService(ProductInMemoryInterface productInMemoryInterface) {
         this.productInMemoryInterface = productInMemoryInterface;
     }
 

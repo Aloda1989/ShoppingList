@@ -1,14 +1,9 @@
 package shoppingList.validation;
 
 import org.springframework.stereotype.Component;
-import shoppingList.repository.ProductInHibernate;
 
 @Component
-public class NameValidationRule extends ProductValidationRule {
-
-    public NameValidationRule(ProductInHibernate pim) {
-        super(pim);
-    }
+public class NameValidationRule {
 
     public static void validate(String productName) throws ProductValidationException {
 

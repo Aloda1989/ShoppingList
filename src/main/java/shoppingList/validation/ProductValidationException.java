@@ -1,10 +1,7 @@
 package shoppingList.validation;
 
-import org.springframework.stereotype.Component;
-
-@Component
-public class ProductValidationException extends Throwable {
-    ProductValidationException(String message) {
-        super(message);
+public class ProductValidationException extends RuntimeException {
+    ProductValidationException(String errorDescription) {
+        super(errorDescription);
     }
 }

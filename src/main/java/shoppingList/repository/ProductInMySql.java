@@ -54,7 +54,7 @@ public class ProductInMySql implements ProductInMemoryInterface {
 
     @Override
     public Optional<Product> getProductList(Category category) {
-        String query = "select * from product.product where category =?";
+        String query = "select * from product.listofcategory where category =?";
         List<Object> products = jdbcTemplate.query(query,
                 new BeanPropertyRowMapper(Product.class), category);
         if (!products.isEmpty()) {
@@ -101,7 +101,6 @@ public class ProductInMySql implements ProductInMemoryInterface {
 
     @Override
     public void delete(Optional<Product> product) {
-
         String query = "delete from product.product where id=?";
         jdbcTemplate.query(query,
                 new BeanPropertyRowMapper(Product.class), product.get().getId());

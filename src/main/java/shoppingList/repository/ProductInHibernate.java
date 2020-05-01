@@ -14,7 +14,7 @@ import java.util.Optional;
 @Repository
 @Profile("hibernate")
 @Transactional
-public class ProductInHibernate implements ProductInMemoryInterface {
+class ProductInHibernate implements ProductInMemoryInterface {
 
     private final SessionFactory sessionFactory;
 

@@ -41,10 +41,10 @@ public class ConsoleUi {
     private void createNewProduct() {
 
         String name = getProductName();
-        BigDecimal priceBD = getProductPrice();
+        BigDecimal price = getProductPrice();
         BigDecimal discount = getProductDiscount();
 
-        Product newProduct = productService.createProduct(name, priceBD, discount);
+        Product newProduct = productService.createProduct(name, price, discount);
         productService.writeProductInDataBase(newProduct);
 
         if (!(newProduct == null)) {

@@ -1,10 +1,18 @@
-# shoppingList
+# ShoppingList
+Patch notes:
+*Moved to Hibernate and partly configured output.*
 
+#####Problems with output to Category and saving only name and id without discount and description.
+
+v.1.0.2
+
+---
 Patch Notes:
-Partly moved on spring
+*Partly moved on spring*
 
 v.1.0.1
 
+---
 App can:
 Create, delete, show category.
 
@@ -26,3 +34,5 @@ Tests were done on:
 - ProductValidationRule
 
 v 1.0.0
+
+---

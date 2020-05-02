@@ -25,6 +25,8 @@ public class Product {
     private BigDecimal discount;
     @Column(name = "description")
     private String description;
+    @Column(name = "user_id")
+    private Long userId;
 
     public Product(String name, BigDecimal priceValue, BigDecimal discountValue) {
         this.name = name;
@@ -68,6 +70,14 @@ public class Product {
         this.discount = discount;
     }
 
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
     public String getName() {
         return name;
     }
@@ -85,21 +95,6 @@ public class Product {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Product product = (Product) o;
-        return Objects.equals(name, product.name) &&
-                Objects.equals(id, product.id) &&
-                category == product.category;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, id, category);
-    }
-
-    @Override
     public String toString() {
         return "Product{" +
                 "id=" + id +
@@ -108,6 +103,26 @@ public class Product {
                 ", category=" + category +
                 ", discount=" + discount +
                 ", description='" + description + '\'' +
+                ", userId=" + userId +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return Objects.equals(id, product.id) &&
+                Objects.equals(name, product.name) &&
+                Objects.equals(price, product.price) &&
+                category == product.category &&
+                Objects.equals(discount, product.discount) &&
+                Objects.equals(description, product.description) &&
+                Objects.equals(userId, product.userId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, price, category, discount, description, userId);
     }
 }

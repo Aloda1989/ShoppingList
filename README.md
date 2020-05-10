@@ -1,5 +1,10 @@
 # ShoppingList
 Patch notes:
+*Moving to web app with shopping list.*
+#####Problems with jsp and Category showing method
+
+---
+Patch notes:
 *Moved to Hibernate and partly configured output.*
 
 #####Problems with output to Category and saving only name and id without discount and description.

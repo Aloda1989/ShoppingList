@@ -19,7 +19,8 @@ public class TextMessage {
         System.out.println("Enter 2 to get Product by ID or Name");
         System.out.println("Enter 3 to retrieve Product List");
         System.out.println("Enter 4 to delete Product by ID or Name ");
-        System.out.println("Enter 5 to end using Application");
+        System.out.println("Enter 5 to Create User");
+        System.out.println("Enter 6 to end using Application");
 
 
     }

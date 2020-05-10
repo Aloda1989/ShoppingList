@@ -2,6 +2,7 @@ package shoppingList.consoleui;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import shoppingList.consoleui.user.CreateUserAction;
 import shoppingList.domain.Category;
 import shoppingList.domain.Product;
 import shoppingList.domain.ProductService;
@@ -195,20 +196,23 @@ public class ConsoleUi {
     }
 
     public void mainUserMenu() {
-        int userMenuChose = 1;
-        while (userMenuChose >= 1 && userMenuChose <= 4) {
+        CreateUserAction createUserAction = new CreateUserAction();
+        int userMenuChoose = 1;
+        while (userMenuChoose >= 1 && userMenuChoose <= 5) {
             TextMessage.userMenu();
 
-            userMenuChose = ScannerInput.getUserNumberInput();
+            userMenuChoose = ScannerInput.getUserNumberInput();
 
-            if (userMenuChose == 1) {
+            if (userMenuChoose == 1) {
                 createNewProduct();
-            } else if (userMenuChose == 2) {
+            } else if (userMenuChoose == 2) {
                 getProductInformation();
-            } else if (userMenuChose == 3) {
+            } else if (userMenuChoose == 3) {
                 getProductListByCategory();
-            } else if (userMenuChose == 4) {
+            } else if (userMenuChoose == 4) {
                 deleteSelectedProduct();
+            } else if (userMenuChoose == 5) {
+                createUserAction.run();
             }
 
         }

@@ -20,6 +20,7 @@ public interface ProductInMemoryInterface {
 
     Optional<Product> get(Product product);
 
-    void delete(Product product);
+    public void delete(Product product);
 
+    void update(Product product);
 }

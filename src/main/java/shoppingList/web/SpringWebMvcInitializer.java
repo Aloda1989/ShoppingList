@@ -1,5 +1,6 @@
 package shoppingList.web;
 
+
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.support.AbstractDispatcherServletInitializer;

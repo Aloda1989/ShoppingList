@@ -82,8 +82,8 @@ public class ProductInMySql implements ProductInMemoryInterface {
     @Override
     public void insert(Product product) {
 
-        String query = "insert into product.product (name, description) values (" +
-                "?, ?)";
+        String query = "insert into product.product (name, description, price, discount) values (" +
+                "?, ?, ?, ?)";
         KeyHolder keyHolder = new GeneratedKeyHolder();
 
         jdbcTemplate.update(connection -> {
@@ -91,6 +91,8 @@ public class ProductInMySql implements ProductInMemoryInterface {
                     .prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, product.getName());
             ps.setString(2, product.getDescription());
+            ps.setBigDecimal(3, product.getPrice());
+            ps.setBigDecimal(4, product.getDiscount());
             return ps;
         }, keyHolder);
 
@@ -114,5 +116,10 @@ public class ProductInMySql implements ProductInMemoryInterface {
         String query = "delete from product.product where id=?";
         jdbcTemplate.query(query,
                 new BeanPropertyRowMapper(Product.class), product.getId());
+    }
+
+    @Override
+    public void update(Product product) {
+
     }
 }

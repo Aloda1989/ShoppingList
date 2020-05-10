@@ -41,10 +41,12 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework:spring-tx:4.3.22.RELEASE"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework:spring-web:4.3.22.RELEASE"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework:spring-webmvc:4.3.22.RELEASE"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: javax.servlet:javax.servlet-api:3.1.0"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: com.fasterxml.jackson.core:jackson-databind:2.10.3"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: com.fasterxml.jackson.core:jackson-annotations:2.10.3"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: com.fasterxml.jackson.core:jackson-core:2.10.3"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.apache.tomcat:tomcat-servlet-api:9.0.31"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: javax.servlet:javax.servlet-api:4.0.1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: com.fasterxml.jackson.core:jackson-databind:2.9.7"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: com.fasterxml.jackson.core:jackson-core:2.9.7"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.hibernate:hibernate-validator:4.3.2.Final"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: javax.validation:validation-api:1.0.0.GA"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.jetbrains:annotations:19.0.0"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

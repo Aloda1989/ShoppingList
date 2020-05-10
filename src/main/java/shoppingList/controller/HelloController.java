@@ -1,4 +1,4 @@
-package shoppingList.Controller;
+package shoppingList.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

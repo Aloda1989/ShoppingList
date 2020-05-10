@@ -32,10 +32,7 @@ class ProductInHibernate implements ProductInMemoryInterface {
         return Optional.ofNullable(product);
     }
 
-    @Override
-    public void delete(Product product) {
-        sessionFactory.getCurrentSession().delete(product);
-    }
+//
 
     @Override
     public Optional<Product> get(String productName) {
@@ -77,5 +74,15 @@ class ProductInHibernate implements ProductInMemoryInterface {
     @Override
     public void delete(Optional<Product> product) {
         sessionFactory.getCurrentSession().delete(product);
+    }
+
+    @Override
+    public void delete(Product product) {
+        sessionFactory.getCurrentSession().delete(product);
+    }
+
+    @Override
+    public void update(Product product) {
+
     }
 }

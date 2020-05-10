@@ -31,4 +31,10 @@ public class UserService {
         user.getProduct().add(product);
         userRepository.update(user);
     }
+
+    public void addTaskToUser(Product product, Long userId) {
+        User user = findUserById(userId);
+        user.getProduct().add(product);
+        userRepository.update(user);
+    }
 }

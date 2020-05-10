@@ -47,15 +47,13 @@ public class ProductInMemory implements ProductInMemoryInterface {
                 .filter(product -> product.getCategory().equals(category))
                 .collect(Collectors.toList());
         return Optional.ofNullable(products.get(0));
-
     }
-
 
     @Override
     public Optional<Product> get(Long productID) {
 
         Predicate<Product> byId = product -> product.getId().equals(productID);
-        var result = pim.stream().filter(byId).collect(Collectors.toList());
+        List<Product> result = pim.stream().filter(byId).collect(Collectors.toList());
         if (!(result.size() == 0)) {
             return Optional.ofNullable(result.get(0));
         } else {
@@ -78,6 +76,11 @@ public class ProductInMemory implements ProductInMemoryInterface {
     @Override
     public void delete(Product product) {
         pim.remove(product);
+    }
+
+    @Override
+    public void update(Product product) {
+
     }
 
 

@@ -7,15 +7,11 @@ import java.util.Date;
 @Entity
 @Table(name = "Products")
 public class Product implements Serializable {
-
     private static final long serialVersionUID = -1000119078147252957L;
-
     private String code;
     private String name;
     private double price;
     private byte[] image;
-
-    // For sort.
     private Date createDate;
 
     public Product() {

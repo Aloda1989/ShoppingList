@@ -9,13 +9,9 @@ import java.io.Serializable;
 @Entity
 @Table(name = "Accounts")
 public class Account implements Serializable {
-
     private static final long serialVersionUID = -2054386655979281969L;
-
-
     public static final String ROLE_MANAGER = "Manager";
     public static final String ROLE_EMPLOYEE = "Employee";
-
     private String userName;
     private String password;
     private boolean active;

@@ -5,17 +5,14 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "Orders", //
+@Table(name = "Orders",
         uniqueConstraints = {@UniqueConstraint(columnNames = "Order_Num")})
 public class Order implements Serializable {
-
     private static final long serialVersionUID = -2576670215015463100L;
-
     private String id;
     private Date orderDate;
     private int orderNum;
     private double amount;
-
     private String customerName;
     private String customerAddress;
     private String customerEmail;
